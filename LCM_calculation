@@ -1,0 +1,12 @@
+#GCD_calculationの方法を使って最小公倍数を求めるプログラムを作る
+#受け取った値を2つの自然数として最小公倍数を求めるプログラム
+a,b = input(), input()#入力された二つの自然数を受け取る
+
+#再帰関数(自分自身を呼び出す関数)
+def gcd(a, b):#gcdは最大公約数(greatest common divisor)の略
+    if b == 0:#このifは二つの自然数aとbが最初から余り0を導き出すことができるもの。
+        return a
+    else:
+        return gcd(b, a%b)#ifのようにa,bの段階で0が出せない時の処理をこれにしている。
+
+print a*b/gcd(a,b)

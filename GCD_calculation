@@ -1,0 +1,10 @@
+#ユークリッドの互除法で最大公約数を求める
+a,b = input(), input()#標準入力で二つの自然数を受けとる
+
+#再帰関数(自分自身を呼び出す関数)
+def gcd(a, b):#gcdは最大公約数(greatest common divisor)の略
+    if b == 0:#このifは二つの自然数aとbが最初から余り0を導き出すことができるもの。
+        return a
+    else:
+        return gcd(b, a%b)#ifのようにa,bの段階で0が出せない時の処理をこれにしている。
+print gcd(a,b)
